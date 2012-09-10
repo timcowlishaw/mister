@@ -14,6 +14,21 @@ Feature: Running a Mapreduce job
       Is the log of the cube root of e.
       """
     And I have uploaded the file "example.txt" to the cluster
+    And I have a job called "wordcount.rb" with the source
+      """
+      require 'mister/job'
+      class WordCount < Mister::Job
+        def map(line_no, text)
+          words = text.split(/[^a-zA-Z0-9\-_]+/)
+          words.each do |word|
+            emit(word, 1)
+          end
+        end
+        def reduce(word, counts)
+          emit(word, counts.inject(&:+))
+        end
+      end
+      """
     When I run the job "wordcount.rb" on the file "example.txt"
     And I download the file "wordcount.out" from the cluster
     Then I should see the following data in the output file "wordcount.out"
@@ -29,7 +44,7 @@ Feature: Running a Mapreduce job
       |Times      |1|
       |cosine     |1|
       |dz         |1|
-      |e.         |1|
+      |e          |1|
       |integral   |1|
       |log        |1|
       |nine       |1|

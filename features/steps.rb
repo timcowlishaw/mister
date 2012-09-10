@@ -10,6 +10,10 @@ Given /^I have uploaded the file "(.*?)" to the cluster$/ do |arg1|
   pending # express the regexp above with the code you wish you had
 end
 
+Given /^I have a job called "(.*?)" with the source$/ do |arg1, string|
+  pending # express the regexp above with the code you wish you had
+end
+
 When /^I run the job "(.*?)" on the file "(.*?)"$/ do |arg1, arg2|
   pending # express the regexp above with the code you wish you had
 end
