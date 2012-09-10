@@ -1,5 +1,14 @@
+require 'aruba/api'
+require 'aruba/reporting'
+World(Aruba::Api)
+
 Given /^I am running a single\-machine mister cluster$/ do
-  pending # express the regexp above with the code you wish you had
+  fork do
+    run_simple("mister manager")
+  end
+  fork do
+    run_simple("mister worker 127.0.0.1")
+  end
 end
 
 Given /^the file "(.*?)" contains the following data$/ do |arg1, string|
