@@ -1,5 +1,7 @@
 source :rubygems
 
+gem 'climate'
+
 group :development do
   gem 'rspec'
   gem 'cucumber'
