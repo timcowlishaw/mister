@@ -21,6 +21,9 @@ GEM
     gherkin (2.11.2)
       json (>= 1.4.6)
     json (1.7.5)
+    metaclass (0.0.1)
+    mocha (0.12.4)
+      metaclass (~> 0.0.1)
     rspec (2.11.0)
       rspec-core (~> 2.11.0)
       rspec-expectations (~> 2.11.0)
@@ -38,4 +41,5 @@ DEPENDENCIES
   aruba
   climate
   cucumber
+  mocha
   rspec
