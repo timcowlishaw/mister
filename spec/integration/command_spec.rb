@@ -1,8 +1,8 @@
 require 'spec_helper'
 describe "mister" do
-  it "should call Mister::CLI#run with the provided arguments" do
-    Mister::CLI.expects(:run).with(["arg1", "arg2"])
-    run_simple("mister arg1 arg2")
+  it "should delegate to the Mister::CLI command tree" do
+    run_simple("mister --help")
+    stdout_from("mister --help").should =~ /Mister: A pure ruby implementation of Mapreduce for fun, not profit\./
   end
 end
 
