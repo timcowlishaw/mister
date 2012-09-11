@@ -1,14 +1,6 @@
-require 'aruba/api'
-require 'aruba/reporting'
-World(Aruba::Api)
-
 Given /^I am running a single\-machine mister cluster$/ do
-  fork do
-    run_simple("mister manager")
-  end
-  fork do
-    run_simple("mister worker 127.0.0.1")
-  end
+  run_simple("mister manager")
+  run_simple("mister worker 127.0.0.1")
 end
 
 Given /^the file "(.*?)" contains the following data$/ do |arg1, string|
