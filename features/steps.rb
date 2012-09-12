@@ -1,5 +1,5 @@
 Given /^I am running a single\-machine mister cluster$/ do
-  run_simple("mister manager")
+  run_simple("mister manager 127.0.0.1")
   run_simple("mister worker 127.0.0.1")
 end
 
