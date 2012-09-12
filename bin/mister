@@ -1,6 +1,6 @@
 #!/usr/bin/env climate
 $:.unshift(File.join(File.dirname(__FILE__), "..", "lib"))
-require 'mister/cli'
+require 'mister'
 Climate.with_standard_exception_handling do
   Mister::CLI.run(ARGV)
 end
