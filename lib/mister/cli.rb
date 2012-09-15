@@ -6,3 +6,4 @@ module Mister
   end
 end
 require 'mister/cli/manager'
+require 'mister/cli/worker'
