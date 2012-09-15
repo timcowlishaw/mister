@@ -1,6 +1,7 @@
 require 'drb'
 module Mister
   class Service
+
     def initialize(address, port, object)
       @address = address
       @port = port
@@ -8,7 +9,7 @@ module Mister
     end
 
     def uri
-      return "druby://#{@address}:#{@port}"
+      Mister::NetworkUtils.drb_uri(@address, @port)
     end
 
     def start
