@@ -3,12 +3,12 @@ Given /^I am running a single\-machine mister cluster$/ do
   run_simple("mister worker 127.0.0.1")
 end
 
-Given /^the file "(.*?)" contains the following data$/ do |arg1, string|
-  pending # express the regexp above with the code you wish you had
+Given /^the file "(.*?)" contains the following data$/ do |filename, data|
+  write_file(filename, data)
 end
 
-Given /^I have uploaded the file "(.*?)" to the cluster$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+Given /^I have uploaded the file "(.*?)" to the cluster$/ do |filename|
+  run_simple("mister upload 127.0.0.1 #{filename}")
 end
 
 Given /^I have a job called "(.*?)" with the source$/ do |arg1, string|
