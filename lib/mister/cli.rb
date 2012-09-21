@@ -7,3 +7,4 @@ module Mister
 end
 require 'mister/cli/manager'
 require 'mister/cli/worker'
+require 'mister/cli/upload'

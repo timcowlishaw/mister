@@ -1,6 +1,6 @@
 source :rubygems
 
-gem 'climate'
+gem 'climate', :path => "../libs/climate"
 
 group :development do
   gem 'rspec'
